@@ -124,31 +124,31 @@
     <Folder Include="dbo\Tables\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\addrTags.sql">
+    <Build Include="dbo\Tables\dbo.addrTags.sql">
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
-    <Build Include="dbo\Tables\TagsPhone.sql">
+    <Build Include="dbo\Tables\dbo.TagsPhone.sql">
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
-    <Build Include="dbo\Tables\PersonalInfo.sql">
+    <Build Include="dbo\Tables\dbo.PersonalInfo.sql">
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
-    <Build Include="dbo\Tables\AddressInfo.sql">
+    <Build Include="dbo\Tables\dbo.AddressInfo.sql">
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
-    <Build Include="dbo\Tables\PhoneInfo.sql">
+    <Build Include="dbo\Tables\dbo.PhoneInfo.sql">
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
-    <Build Include="dbo\Tables\rooms.sql">
+    <Build Include="dbo\Tables\dbo.rooms.sql">
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
-    <Build Include="dbo\Tables\reserveInfo.sql">
+    <Build Include="dbo\Tables\dbo.reserveInfo.sql">
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
