@@ -153,4 +153,7 @@
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Check_Constraint.sql" />
+  </ItemGroup>
 </Project>
