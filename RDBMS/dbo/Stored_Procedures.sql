@@ -5,11 +5,11 @@
 USE [dbHotel]
 GO
 
-set ansi_nulls on;
-go
+SET ANSI_NULLS ON;
+GO
 
-set quoted_identifier on;
-go
+SET QUOTED_IDENTIFIER ON;
+GO
 
 create or alter dbo.allPInfo
 as
@@ -124,5 +124,17 @@ begin
 		    @LastName  ,
 		    @EGN
 	    )    
+end
+go
+
+create or alter dbo.delPInfo
+-- delcare
+	@id			[uniqueidentifier]
+as
+begin
+	delete
+		PersonalInfo
+	where
+		id = @id
 end
 go

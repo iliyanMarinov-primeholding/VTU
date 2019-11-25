@@ -5,10 +5,10 @@
 USE [dbHotel]
 GO
 
-ALTER TABLE [dbo].[PhoneInfo]
-ALTER COLUMN [EGN] [nvarchar](16) NOT NULL
-GO
+--ALTER TABLE [dbo].[PersonalInfo]
+--ALTER COLUMN [EGN] [nvarchar](16) NOT NULL
+--GO
 
-ALTER TABLE [dbo].[PhoneInfo]
+ALTER TABLE [dbo].[PersonalInfo]
 ADD CONSTRAINT AK_EGN UNIQUE([EGN])
 GO 
