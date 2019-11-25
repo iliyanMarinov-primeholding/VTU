@@ -1,6 +1,10 @@
 ﻿USE [dbHotel]
 GO
 
+/*
+	https://docs.microsoft.com/en-us/sql/relational-databases/tables/create-check-constraints?view=sql-server-ver15
+*/
+
 ALTER TABLE [dbo].[PhoneInfo]  WITH CHECK ADD  CONSTRAINT [CK_PhoneInfo_Phone_Len]
 CHECK  ((len(Trim( ' ,.<>/?;'':"[]\{}|`~!@#$%^&*()_+-='+char(10)+char(13) FROM [PhonenNumber]))>(0)))
 GO

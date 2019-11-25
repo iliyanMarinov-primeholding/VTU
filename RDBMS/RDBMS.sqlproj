@@ -154,6 +154,8 @@
     </Build>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Check_Constraint.sql" />
+    <None Include="Constraints_Check.sql" />
+    <None Include="dbo\Constraints_Unique.sql" />
+    <None Include="dbo\Stored_Procedures.sql" />
   </ItemGroup>
 </Project>
