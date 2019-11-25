@@ -30,6 +30,21 @@ begin
 end
 go
 
+create or alter dbo.getPInfo
+-- delcare
+	@id			[uniqueidentifier]
+as
+begin
+    IF @id IS NULL
+	    select *
+	    from PersonalInfo
+    else
+	    select *
+	    from PersonalInfo
+        where id = @id
+end
+go
+
 create or alter dbo.newPInfo
 -- delcare
 	@FirstName  [nvarchar](256) = NULL,
