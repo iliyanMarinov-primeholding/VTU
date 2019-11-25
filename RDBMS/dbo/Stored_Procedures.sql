@@ -1,8 +1,4 @@
-﻿/*
-    line numbers
-*/
-
-USE [dbHotel]
+﻿USE [dbHotel]
 GO
 
 SET ANSI_NULLS ON;
@@ -11,7 +7,7 @@ GO
 SET QUOTED_IDENTIFIER ON;
 GO
 
-create or alter dbo.allPInfo
+create or alter procedure dbo.allPInfo
 as
 begin
 	select *
@@ -19,9 +15,9 @@ begin
 end
 go
 
-create or alter dbo.getPInfo
+create or alter procedure dbo.getPInfo
 -- delcare
-	@id			[uniqueidentifier]
+	@id			[uniqueidentifier] = null
 as
 begin
 	select *
@@ -30,9 +26,12 @@ begin
 end
 go
 
-create or alter dbo.getPInfo
+execute dbo.getPInfo
+exec dbo.getPInfo
+
+create or alter procedure dbo.getPInfo
 -- delcare
-	@id			[uniqueidentifier]
+	@id			[uniqueidentifier] = NULL
 as
 begin
     IF @id IS NULL
@@ -45,7 +44,7 @@ begin
 end
 go
 
-create or alter dbo.newPInfo
+create or alter procedure dbo.newPInfo
 -- delcare
 	@FirstName  [nvarchar](256) = NULL,
 	@MiddleName [nvarchar](128) = NULL,
@@ -70,7 +69,7 @@ begin
 end
 go
 
-create or alter dbo.setPInfo
+create or alter procedure dbo.setPInfo
 -- delcare
 	@FirstName  [nvarchar](256) = NULL,
 	@MiddleName [nvarchar](128) = NULL,
@@ -91,13 +90,13 @@ begin
 end
 go
 
-create or alter dbo.setPInfo
+create or alter procedure dbo.setPInfo
 -- delcare
 	@FirstName  [nvarchar](256) = NULL,
 	@MiddleName [nvarchar](128) = NULL,
 	@LastName	[nvarchar](128) = NULL,
 	@EGN		[nvarchar](16 ) = NULL,
-	@id			[uniqueidentifier]
+	@id			[uniqueidentifier] = NULL
 as
 begin
 	update
@@ -127,7 +126,7 @@ begin
 end
 go
 
-create or alter dbo.delPInfo
+create or alter procedure dbo.delPInfo
 -- delcare
 	@id			[uniqueidentifier]
 as
