@@ -158,4 +158,9 @@
     <None Include="dbo\Constraints_Unique.sql" />
     <None Include="dbo\Stored_Procedures.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="dbo\Triggers.sql" />
+    <None Include="dbo\UDF.sql" />
+    <None Include="dbo\CTE.sql" />
+  </ItemGroup>
 </Project>

@@ -26,14 +26,16 @@ begin
 end
 go
 
-execute dbo.getPInfo
-exec dbo.getPInfo
+--execute dbo.getPInfo
+--exec dbo.getPInfo
 
 create or alter procedure dbo.getPInfo
 -- delcare
 	@id			[uniqueidentifier] = NULL
 as
 begin
+    set nocount on;
+
     IF @id IS NULL
 	    select *
 	    from PersonalInfo
@@ -41,6 +43,8 @@ begin
 	    select *
 	    from PersonalInfo
         where id = @id
+
+    return 0;
 end
 go
 
@@ -68,6 +72,8 @@ begin
 	)
 end
 go
+
+--exec dbo.newPInfo 'ivan', 'ivan', 'ivan', '0123456789', newid()
 
 create or alter procedure dbo.setPInfo
 -- delcare
