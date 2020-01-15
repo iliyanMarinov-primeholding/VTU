@@ -1,16 +1,4 @@
 ﻿/*
-Post-Deployment Script Template							
---------------------------------------------------------------------------------------
- This file contains SQL statements that will be appended to the build script.		
- Use SQLCMD syntax to include a file in the post-deployment script.			
- Example:      :r .\myfile.sql								
- Use SQLCMD syntax to reference a variable in the post-deployment script.		
- Example:      :setvar TableName MyTable							
-               SELECT * FROM [$(TableName)]					
---------------------------------------------------------------------------------------
-*/
-
-/*
     best example for recursion in SQL
     -------------------------------------------------------------------------------------------------------------
     https://www.sqlservercentral.com/articles/tally-oh-an-improved-sql-8k-%E2%80%9Ccsv-splitter%E2%80%9D-function
@@ -48,7 +36,8 @@ RETURN
         cteTally(N) AS (
             --==== This provides the "base" CTE and limits the number of rows right up front
             -- for both a performance gain and prevention of accidental "overruns"
-            SELECT TOP (ISNULL(DATALENGTH(@pString),0)) ROW_NUMBER() OVER (ORDER BY (SELECT NULL))
+            SELECT TOP (ISNULL(DATALENGTH(@pString),0))
+                ROW_NUMBER() OVER (ORDER BY (SELECT NULL))
             FROM E4
         ),
         cteStart(N1) AS (

@@ -1,24 +1,4 @@
-﻿/*
-Post-Deployment Script Template							
---------------------------------------------------------------------------------------
- This file contains SQL statements that will be appended to the build script.		
- Use SQLCMD syntax to include a file in the post-deployment script.			
- Example:      :r .\myfile.sql								
- Use SQLCMD syntax to reference a variable in the post-deployment script.		
- Example:      :setvar TableName MyTable							
-               SELECT * FROM [$(TableName)]					
---------------------------------------------------------------------------------------
-*/
-
-/*
-Pre-Script
---------------------------------------------------------------------------------------
-insert into [PhoneInfo] ([Id],[PersonalInfoId],[PhonenNumber], areaCode)
-select Id,Id,clientNumber, '084' from PersonalInfo
---------------------------------------------------------------------------------------
-*/
-
-USE dbHotel;
+﻿USE dbHotel;
 GO
 
 SET ANSI_NULLS ON
@@ -55,7 +35,7 @@ BEGIN
                 N.id = O.Id
         WHERE
             /* updates only changed EGN records */
-            O.clientNumber != O.EGN
+            N.clientNumber != N.EGN
 
 ------------------------------------------------------
 -- select * from   PersonalInfo where egn = '00000000'

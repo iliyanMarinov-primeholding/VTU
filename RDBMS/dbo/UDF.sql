@@ -1,16 +1,4 @@
-﻿/*
-Post-Deployment Script Template							
---------------------------------------------------------------------------------------
- This file contains SQL statements that will be appended to the build script.		
- Use SQLCMD syntax to include a file in the post-deployment script.			
- Example:      :r .\myfile.sql								
- Use SQLCMD syntax to reference a variable in the post-deployment script.		
- Example:      :setvar TableName MyTable							
-               SELECT * FROM [$(TableName)]					
---------------------------------------------------------------------------------------
-*/
-
-USE dbHotel;
+﻿USE dbHotel;
 GO
 
 SET ANSI_NULLS ON
@@ -231,11 +219,15 @@ AS
 BEGIN
     RETURN (
 	    -- Add the SELECT statement with parameter references here
-	    SELECT AllTags = STRING_AGG(TagValue, ',') WITHIN GROUP (ORDER BY TagValue)
-        FROM TagsPhone
+	    SELECT
+            AllTags = STRING_AGG(TagValue, ',')
+                WITHIN GROUP (ORDER BY TagValue)
+        FROM
+            TagsPhone
         WHERE
-            
             PhoneId = @PhoneId
+        --GROUP BY
+        --    TagValue
     )
 END
 GO
